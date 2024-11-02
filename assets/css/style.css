@@ -1,0 +1,39 @@
+.portfolio-light-works {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.portfolio-light-work {
+	margin-bottom: 10px;
+	position: relative;
+	min-height: 1px;
+	max-width: 100%;
+	flex: 0 0 100%;
+	padding: 0;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.portfolio-light__img {
+	width: 100% !important;
+	height: auto !important;
+}
+
+.portfolio-light__title {
+	font-weight: bold;
+}
+
+.portfolio-light__content {
+	margin-top: 5px;
+}
+
+@media (min-width: 425px) {
+	.portfolio-light-work {
+		margin-bottom: 20px;
+		max-width: 50%;
+		flex: 0 0 50%;
+		padding: 0 10px;
+	}
+}
