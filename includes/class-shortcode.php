@@ -13,7 +13,7 @@ use DateTime;
 use const Plance\Plugin\Portfolio_Light\PATH;
 use const Plance\Plugin\Portfolio_Light\POST_TYPE;
 use const Plance\Plugin\Portfolio_Light\FIELD_POSITION;
-use Plance\Plugin\Multilang_Perelink\Singleton;
+use Plance\Plugin\Portfolio_Light\Singleton;
 
 /**
  * Shortcode class.

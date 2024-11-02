@@ -13,6 +13,7 @@ use const Plance\Plugin\Portfolio_Light\POST_TYPE;
 use const Plance\Plugin\Portfolio_Light\FIELD_LINK;
 use const Plance\Plugin\Portfolio_Light\FIELD_CREATED;
 use const Plance\Plugin\Portfolio_Light\FIELD_POSITION;
+use Plance\Plugin\Portfolio_Light\Singleton;
 
 /**
  * Post_Type class.

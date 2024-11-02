@@ -9,7 +9,6 @@ namespace Plance\Plugin\Portfolio_Light;
 
 defined( 'ABSPATH' ) || exit;
 
-use const Plance\Plugin\Portfolio_Light\PATH;
 use Plance\Plugin\Portfolio_Light\Singleton;
 
 /**

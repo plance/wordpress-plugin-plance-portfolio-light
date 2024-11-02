@@ -9,9 +9,9 @@ namespace Plance\Plugin\Portfolio_Light;
 
 defined( 'ABSPATH' ) || exit;
 
+use WP_Query;
 use const Plance\Plugin\Portfolio_Light\POST_TYPE;
 use const Plance\Plugin\Portfolio_Light\FIELD_POSITION;
-use WP_Query;
 use Plance\Plugin\Portfolio_Light\Singleton;
 
 /**
