@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugin Portfolio Light\n"
-"POT-Creation-Date: 2024-10-20 15:22+0300\n"
-"PO-Revision-Date: 2024-10-20 15:24+0300\n"
+"POT-Creation-Date: 2024-11-03 15:35+0200\n"
+"PO-Revision-Date: 2024-11-03 15:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk_UA\n"
@@ -13,23 +13,24 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_x;_n;gettext;gettext_noop;_;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e;_x;_n;gettext;gettext_noop;esc_html_e;_;_ex;_nx;"
+"esc_html__;esc_attr__;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: assets\n"
 
-#: includes/class-post-type.php:48 includes/class-post-type.php:49
+#: includes/class-post-type.php:49 includes/class-post-type.php:50
 msgid "Portfolio"
 msgstr "Портфоліо"
 
-#: includes/class-post-type.php:76
+#: includes/class-post-type.php:77
 msgid "Portfolio settings"
 msgstr "Налаштування роботи"
 
-#: includes/class-post-type.php:124
+#: includes/class-post-type.php:125
 msgid "Preview"
 msgstr "Превью"
 
-#: includes/class-post-type.php:128
+#: includes/class-post-type.php:129
 msgid "Position"
 msgstr "Позиція"
 

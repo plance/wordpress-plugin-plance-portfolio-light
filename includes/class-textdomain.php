@@ -1,6 +1,6 @@
 <?php
 /**
- * Language class.
+ * Textdomain class.
  *
  * @package Plance\Plugin\Portfolio_Light
  */
@@ -12,9 +12,9 @@ defined( 'ABSPATH' ) || exit;
 use Plance\Plugin\Portfolio_Light\Singleton;
 
 /**
- * Language class.
+ * Textdomain class.
  */
-class Language {
+class Textdomain {
 	use Singleton;
 
 	/**
