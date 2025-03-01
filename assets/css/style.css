@@ -1,19 +1,13 @@
 .portfolio-light-works {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
 }
 
 .portfolio-light-work {
-	margin-bottom: 10px;
 	position: relative;
-	min-height: 1px;
-	max-width: 100%;
-	flex: 0 0 100%;
+	width: 100%;
 	padding: 0;
-
-	&:last-child {
-		margin-bottom: 0;
-	}
 }
 
 .portfolio-light__img {
@@ -30,10 +24,12 @@
 }
 
 @media (min-width: 425px) {
+	.portfolio-light-works {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+
 	.portfolio-light-work {
-		margin-bottom: 20px;
-		max-width: 50%;
-		flex: 0 0 50%;
 		padding: 0 10px;
 	}
 }

@@ -37,13 +37,17 @@ class Shortcode {
 	 * @return string
 	 */
 	public function shortcode( $atts = array() ) {
-
-		$atts = shortcode_atts(
+		$default_format = 'Y-m-d';
+		$atts           = shortcode_atts(
 			array(
-				'date_format' => 'Y-m-d',
+				'date_format' => $default_format,
 			),
 			$atts
 		);
+
+		if ( ! $this->is_safe_date_format( $atts['date_format'] ) ) {
+			$atts['date_format'] = $default_format;
+		}
 
 		wp_enqueue_style( 'plance-portfolio-light' );
 
@@ -92,6 +96,17 @@ class Shortcode {
 	 */
 	public function is_valid_date( $date, $format = 'Y-m-d' ) {
 		$date_time = DateTime::createFromFormat( $format, $date );
+
 		return $date_time && $date_time->format( $format ) === $date;
+	}
+
+	/**
+	 * Check date format is safe or not.
+	 *
+	 * @param  string $format Format.
+	 * @return bool
+	 */
+	private function is_safe_date_format( $format ) {
+		return preg_match( '/^[dDjlNSwzWFmMntLoYyaABgGhHisueIOPTZcrU\-:\/,. ]+$/', $format );
 	}
 }

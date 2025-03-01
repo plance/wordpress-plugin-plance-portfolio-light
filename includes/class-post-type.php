@@ -46,8 +46,8 @@ class Post_Type {
 			POST_TYPE,
 			array(
 				'labels'      => array(
-					'name'          => __( 'Portfolio', 'plance-portfolio-light' ),
-					'singular_name' => __( 'Portfolio', 'plance-portfolio-light' ),
+					'name'          => __( 'Portfolio Light', 'plance-portfolio-light' ),
+					'singular_name' => __( 'Portfolio Light', 'plance-portfolio-light' ),
 				),
 				'public'      => false,
 				'show_ui'     => true,
@@ -155,9 +155,20 @@ class Post_Type {
 	 */
 	public function save_post( $post_id ) {
 		$input = filter_input( INPUT_POST, '_plance_plugin_portfolio_light', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY );
+		$input = filter_var_array(
+			$input,
+			array(
+				'link'     => FILTER_SANITIZE_URL,
+				'created'  => array(
+					'filter'  => FILTER_VALIDATE_REGEXP,
+					'options' => array( 'regexp' => '/^\d{4}-\d{2}-\d{2}$/' ),
+				),
+				'position' => FILTER_SANITIZE_NUMBER_INT,
+			)
+		);
 
-		update_post_meta( $post_id, FIELD_LINK, $input['link'] ?? '' );
+		update_post_meta( $post_id, FIELD_LINK, $input['link'] );
 		update_post_meta( $post_id, FIELD_CREATED, $input['created'] ?? '' );
-		update_post_meta( $post_id, FIELD_POSITION, $input['position'] ?? '' );
+		update_post_meta( $post_id, FIELD_POSITION, $input['position'] );
 	}
 }
