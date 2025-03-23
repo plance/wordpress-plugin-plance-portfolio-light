@@ -45,7 +45,7 @@ endif;
 			</div>
 
 			<div class="portfolio-light__content">
-				<?php echo wpautop( $post_loop->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php echo wpautop( wp_kses_post( $post_loop->post_content ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</div>
 
 
@@ -53,7 +53,7 @@ endif;
 			<?php if ( ! empty( $field_created ) && ! empty( $args['date_format'] ) && $args['instance']->is_valid_date( $field_created ) ) : ?>
 				<div class="portfolio-light__created">
 					<span class="portfolio-light__created-title">
-						<?php echo esc_html_e( 'Work done', 'plance-portfolio-light' ); ?>:
+						<?php echo esc_html_e( 'Work done', 'portfolio-light' ); ?>:
 					</span>
 					<span class="portfolio-light__created-value">
 						<?php echo esc_attr( wp_date( $args['date_format'], strtotime( $field_created ) ) ); ?>

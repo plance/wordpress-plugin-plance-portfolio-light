@@ -46,8 +46,8 @@ class Post_Type {
 			POST_TYPE,
 			array(
 				'labels'      => array(
-					'name'          => __( 'Portfolio Light', 'plance-portfolio-light' ),
-					'singular_name' => __( 'Portfolio Light', 'plance-portfolio-light' ),
+					'name'          => __( 'Portfolio Light', 'portfolio-light' ),
+					'singular_name' => __( 'Portfolio Light', 'portfolio-light' ),
 				),
 				'public'      => false,
 				'show_ui'     => true,
@@ -74,7 +74,7 @@ class Post_Type {
 	public function add_meta_boxes() {
 		add_meta_box(
 			'mb-' . POST_TYPE,
-			__( 'Portfolio settings', 'plance-portfolio-light' ),
+			__( 'Portfolio settings', 'portfolio-light' ),
 			function( $post ) {
 				load_template(
 					PATH . '/templates/admin/metabox.php',
@@ -122,11 +122,11 @@ class Post_Type {
 
 		foreach ( $default_columns as $key => $value ) {
 			if ( 'title' === $key ) {
-				$columns['column_preview'] = __( 'Preview', 'plance-portfolio-light' );
+				$columns['column_preview'] = __( 'Preview', 'portfolio-light' );
 			}
 
 			if ( 'date' === $key ) {
-				$columns['column_sort'] = __( 'Position', 'plance-portfolio-light' );
+				$columns['column_sort'] = __( 'Position', 'portfolio-light' );
 			}
 
 			$columns[ $key ] = $value;
@@ -154,21 +154,23 @@ class Post_Type {
 	 * @return void
 	 */
 	public function save_post( $post_id ) {
-		$input = filter_input( INPUT_POST, '_plance_plugin_portfolio_light', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY );
-		$input = filter_var_array(
-			$input,
-			array(
-				'link'     => FILTER_SANITIZE_URL,
-				'created'  => array(
-					'filter'  => FILTER_VALIDATE_REGEXP,
-					'options' => array( 'regexp' => '/^\d{4}-\d{2}-\d{2}$/' ),
-				),
-				'position' => FILTER_SANITIZE_NUMBER_INT,
-			)
-		);
+		$input = filter_input( INPUT_POST, '_plugin_portfolio_light', FILTER_SANITIZE_FULL_SPECIAL_CHARS, FILTER_REQUIRE_ARRAY );
+		if ( $input ) {
+			$input = filter_var_array(
+				$input,
+				array(
+					'link'     => FILTER_SANITIZE_URL,
+					'created'  => array(
+						'filter'  => FILTER_VALIDATE_REGEXP,
+						'options' => array( 'regexp' => '/^\d{4}-\d{2}-\d{2}$/' ),
+					),
+					'position' => FILTER_SANITIZE_NUMBER_INT,
+				)
+			);
 
-		update_post_meta( $post_id, FIELD_LINK, $input['link'] );
-		update_post_meta( $post_id, FIELD_CREATED, $input['created'] ?? '' );
-		update_post_meta( $post_id, FIELD_POSITION, $input['position'] );
+			update_post_meta( $post_id, FIELD_LINK, $input['link'] );
+			update_post_meta( $post_id, FIELD_CREATED, $input['created'] ?? '' );
+			update_post_meta( $post_id, FIELD_POSITION, $input['position'] );
+		}
 	}
 }

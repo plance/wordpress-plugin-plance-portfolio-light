@@ -29,7 +29,7 @@ class Taxonomy {
 			TAXONOMY,
 			POST_TYPE,
 			array(
-				'label'             => __( 'Categories', 'plance-portfolio-light' ),
+				'label'             => __( 'Categories', 'portfolio-light' ),
 				'public'            => false,
 				'hierarchical'      => true,
 				'show_admin_column' => true,

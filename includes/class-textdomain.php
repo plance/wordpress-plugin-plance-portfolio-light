@@ -23,6 +23,6 @@ class Textdomain {
 	 * @return void
 	 */
 	protected function init() {
-		load_plugin_textdomain( 'plance-portfolio-light', false, '/plance-portfolio-light/languages' );
+		load_plugin_textdomain( 'portfolio-light', false, '/portfolio-light/languages' );
 	}
 }

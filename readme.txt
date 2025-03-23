@@ -1,7 +1,7 @@
 === Portfolio Light ===
 Contributors: plance
 Tags: portfolio
-Requires at least: 6.0.0
+Requires at least: 6.0
 Tested up to: 6.7
 Stable tag: 1.0.0
 License: GPLv2 or later
@@ -25,7 +25,7 @@ How to use:
 == Installation ==
 
 1. Install the "Portfolio Light" plugin through the standard WordPress plugin installation page.
-2. Or unzip and upload the "plance-portfolio-light" to the '/wp-content/plugins/' directory.
+2. Or unzip and upload the "portfolio-light" to the '/wp-content/plugins/' directory.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 4. Go to the "Portfolio Light" page in the sidebar menu.
 

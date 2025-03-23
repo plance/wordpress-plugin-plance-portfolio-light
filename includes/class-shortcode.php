@@ -49,7 +49,7 @@ class Shortcode {
 			$atts['date_format'] = $default_format;
 		}
 
-		wp_enqueue_style( 'plance-portfolio-light' );
+		wp_enqueue_style( 'portfolio-light' );
 
 		$posts = get_posts(
 			array(
