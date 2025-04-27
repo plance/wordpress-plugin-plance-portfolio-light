@@ -7,7 +7,7 @@
  * Plugin Name: Portfolio Light
  * Description: Create your portfolio (use shortcode [portfolio_light] to display your portfolio list).
  * Plugin URI:  https://plance.top/
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      plance
  * License:     GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
